@@ -430,6 +430,13 @@
                         <li>
                             <a href="{{ route('user.index') }}" class="waves-effect">
                                 <i class="bx bx-user"></i>
+                                <span key="t-user-header">Permission</span>
+                            </a>
+                        </li>
+                        @endcan
+                        <li>
+                            <a href="{{ route('user.index') }}" class="waves-effect">
+                                <i class="bx bx-user"></i>
                                 <span key="t-user-header">User</span>
                             </a>
                         </li>
@@ -456,7 +463,7 @@
 
                           
                        
-                        @endcan
+                       
 
                     </ul>
                 </div>

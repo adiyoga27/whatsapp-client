@@ -19,13 +19,13 @@
 
     <div class="row">
         <div class="col-xl">
-            <div class="alert alert-danger" role="alert" style="text-align: center">
+            {{-- <div class="alert alert-danger" role="alert" style="text-align: center">
                 @if (isset($notif))
                     {!! $notif !!}
                 @endif
 
 
-            </div>
+            </div> --}}
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">

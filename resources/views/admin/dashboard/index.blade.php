@@ -72,45 +72,7 @@
         </div>
         <div class="col-xl-8">
             <div class="row">
-                {{-- <div class="col-md-4">
-                    <div class="card mini-stats-wid">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-grow-1">
-                                    <p class="text-muted fw-medium">Book In Total</p>
-                                    <h4 class="mb-0">{{ $book }}</h4>
-                                </div>
-
-                                <div class="flex-shrink-0 align-self-center">
-                                    <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
-                                        <span class="avatar-title">
-                                            <i class="bx bxs-book-open font-size-24"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-                <div class="col-md-4">
-                    <div class="card mini-stats-wid">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-grow-1">
-                                    <p class="text-muted fw-medium" key="t-article-total">Article In Total</p>
-                                </div>
-
-                                <div class="flex-shrink-0 align-self-center ">
-                                    <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-                                        <span class="avatar-title rounded-circle bg-primary">
-                                            <i class="bx bx-news font-size-24"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+         
                 <div class="col-md-4">
                     <div class="card mini-stats-wid">
                         <div class="card-body">
@@ -136,7 +98,7 @@
                         <div class="card-body">
                             <div class="d-flex">
                                 <div class="flex-grow-1">
-                                    <p class="text-muted fw-medium" key="t-product-total">Product In Total</p>
+                                    <p class="text-muted fw-medium" key="t-product-total">Client Whatsapp</p>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -150,25 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mini-stats-wid">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-grow-1">
-                                    <p class="text-muted fw-medium" key="t-testimonial-total">Testimonial In Total</p>
-                                </div>
-
-                                <div class="flex-shrink-0 align-self-center">
-                                    <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
-                                        <span class="avatar-title rounded-circle bg-primary">
-                                            <i class="bx bx-copy-alt font-size-24"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
 
             <!-- end row -->
