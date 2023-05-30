@@ -59,8 +59,8 @@ class SendWhatsapJob implements ShouldQueue
                         'number' => $queue->phone,
                         'message' => ' ',
                         'filetype' => $fileType,
-                        'url' => url('storage') . '/' . ($file->url),
-                        // 'url' => $val
+                        // 'url' => url('storage') . '/' . ($file->url),
+                        'url' => 'https://saddannusantara.com/Pamflet-Susunan-Acara-Alur-Acara-dan-ZOO-Map-VSD.pdf'
                     ]);
             }
 
