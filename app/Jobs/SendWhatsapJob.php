@@ -36,10 +36,12 @@ class SendWhatsapJob implements ShouldQueue
     {
         $whatsapp = Whatsapp::first();
         $queue = QueueMessage::where('id', $this->queueID)->first();
-
+        $queue->update([
+            'status'  => 'ongoing',
+        ]);
         try {
+        $queue = QueueMessage::where('id', $this->queueID)->first();
             sleep($queue->message->duration ?? 5);
-
             $responsMessage = Http::timeout(10)->withHeaders([
                 'Content-Type' => 'application/json',
             ])
@@ -48,7 +50,7 @@ class SendWhatsapJob implements ShouldQueue
                     'number' => $queue->phone,
                     'message' => $queue->message->message
                 ]);
-
+            
             if ($responsMessage->status() == 200) {
                 $queue->update([
                     'status'  => 'success',
