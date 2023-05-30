@@ -1,0 +1,319 @@
+@import "./font.scss";
+@import "./header.scss";
+@import "./pagination.scss";
+@import "./modal.scss";
+@import "./form.scss";
+@import "./custom.scss";
+body {
+    overflow-x: hidden !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-contact {
+    background-repeat: repeat, no-repeat !important;
+    background: url("/public/wordpress/img/background/cover-33.png"),
+        url("/public/wordpress/img/background/cover-34.png");
+    background-position: center, top center;
+    background-size: contain, cover;
+
+    & > div {
+        background-repeat: no-repeat !important;
+        background: url("/public/wordpress/img/background/cover-32.png");
+        background-position: right top;
+        @media screen and (max-width: 998px) {
+            background-position: right -120px top;
+        }
+    }
+}
+.custom-section-1 {
+    &.theme-1 {
+        .picture {
+            grid-area: picture;
+            grid-row: 1 / 3;
+        }
+        .title {
+            grid-area: title;
+        }
+        .desc {
+            grid-area: desc;
+        }
+        grid-template-areas: "picture title" ". desc";
+        @media screen and (max-width: 998px) {
+            grid-template-areas: "picture title" "desc desc";
+            .picture {
+                grid-row: auto;
+            }
+        }
+    }
+    &.theme-5 {
+        background-repeat: no-repeat !important;
+        background: url("/public/wordpress/img/background/cover-4.png"),
+            url("/public/wordpress/img/background/cover-5.png"),
+            url("/public/wordpress/img/background/cover-6.png"),
+            url("/public/wordpress/img/background/cover-7.png"),
+            url("/public/wordpress/img/background/cover-8.png");
+        background-position: left -50% top 60%, left 40% top 35%,
+            left 21% top 20%, center top 20%, left 30% bottom;
+        & > div {
+            background-repeat: no-repeat !important;
+            background: url("/public/wordpress/img/background/cover-2.png"),
+                url("/public/wordpress/img/background/cover-1.png"),
+                url("/public/wordpress/img/background/cover-3.png");
+            background-position: right 30% top 30%, bottom 10px right 0px,
+                bottom right 45%;
+            background-size: auto, 40%, auto;
+        }
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-28.png");
+            background-position: top 120px center !important;
+            & > div {
+                background: url("/public/wordpress/img/background/cover-2.png"),
+                    url("/public/wordpress/img/background/cover-1.png");
+                background-position: bottom 120px center, bottom center;
+                background-size: 80px, 218px;
+            }
+        }
+    }
+    &.theme-6 {
+        background-repeat: no-repeat !important;
+        background: url("/public/wordpress/img/background/cover-20.png");
+        background-position: top right;
+        background-size: contain;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-30.png");
+            background-position: left center !important;
+            background-size: cover;
+        }
+    }
+    &.theme-8 {
+        .group-img {
+            background: url("/public/wordpress/img/background/cover-42.png"),
+                url("/public/wordpress/img/background/cover-43.png");
+            background-position: left bottom, right top;
+            background-repeat: no-repeat !important;
+            @media screen and (max-width: 998px) {
+                background: url("/public/wordpress/img/background/cover-44.png"),
+                    url("/public/wordpress/img/background/cover-45.png");
+                background-position: left bottom, right top;
+            }
+        }
+    }
+    &.theme-9 {
+        background: url("/public/wordpress/img/background/cover-38.png");
+        background-repeat: no-repeat !important;
+        background-position: top right;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-39.png");
+            background-position: top right;
+        }
+    }
+
+    &.theme-13 {
+        background: url("/public/wordpress/img/background/cover-67.png");
+        background-repeat: no-repeat !important;
+        background-position: center center;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-67.png");
+            background-size: 100px;
+            background-position: left 30% top 30%;
+        }
+    }
+}
+.custom-section-2 {
+    &.theme-5 {
+        background: url("/public/wordpress/img/background/cover-10.png"),
+            url("/public/wordpress/img/background/cover-9.png");
+        background-position: right -200px center, right 10% center;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-27.png");
+
+            background-position: right bottom 10px;
+        }
+    }
+    &.theme-6 {
+        background: url("/public/wordpress/img/background/cover-19.png");
+        background-position: center;
+        background-size: 50%;
+    }
+    background-repeat: no-repeat !important;
+}
+.custom-section-3 {
+    &.theme-9 {
+        background: url("/public/wordpress/img/background/cover-36.png"),
+            url("/public/wordpress/img/background/cover-37.png");
+        background-position: left top, right center;
+        background-repeat: no-repeat;
+        background-size: auto, auto;
+        @media screen and (max-width: 998px) {
+            background-size: 100px, 140px;
+        }
+    }
+    &.theme-10 {
+        background: url("/public/wordpress/img/background/cover-48.png");
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background-size: 60px;
+            background-position: right 20px center;
+        }
+    }
+    &.theme-12 {
+        background: url("/public/wordpress/img/background/cover-59.png");
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    &.theme-13 {
+        background: url("/public/wordpress/img/background/cover-66.png");
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background-size: 60px;
+        }
+    }
+}
+
+.custom-section-5 {
+    &.theme-5 {
+        background: url("/public/wordpress/img/background/cover-12.png"),
+            url("/public/wordpress/img/background/cover-11.png"),
+            url("/public/wordpress/img/background/cover-13.png");
+        background-position: center, right top, left bottom !important;
+        background-size: contain;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-25.png"),
+                url("/public/wordpress/img/background/cover-11.png"),
+                url("/public/wordpress/img/background/cover-13.png");
+        }
+    }
+    &.theme-6 {
+        background: url("/public/wordpress/img/background/cover-16.png"),
+            url("/public/wordpress/img/background/cover-17.png");
+        background-position: center, center;
+        background-size: contain;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-29.png"),
+                url("/public/wordpress/img/background/cover-17.png");
+            background-position: center, center;
+            background-size: cover, cover;
+        }
+    }
+    &.theme-10 {
+        background: url("/public/wordpress/img/background/cover-46.png"),
+            url("/public/wordpress/img/background/cover-47.png");
+        background-position: right center, left center;
+    }
+    &.theme-13 {
+        background: url("/public/wordpress/img/background/cover-63.png"),
+            url("/public/wordpress/img/background/cover-64.png");
+        background-position: center top, left center;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-65.png"),
+                url("/public/wordpress/img/background/cover-64.png");
+            background-size: auto, 146px;
+            background-position: center top, left center;
+        }
+    }
+    background-repeat: no-repeat !important;
+}
+
+.custom-section-4 {
+    // background-repeat: no-repeat !important;
+    // background: url("/public/wordpress/img/background/cover-15.png");
+    // background-position: right bottom 30px;
+    // @media screen and (max-width: 998px) {
+    //     background: url("/public/wordpress/img/background/cover-26.png");
+    //     background-position: right bottom;
+    // }
+    &.theme-7 {
+        .swiper-button-prev,
+        .swiper-button-next {
+            border-radius: 100%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            &::after {
+                content: "";
+            }
+        }
+        .swiper-button-prev {
+            background: #55b33f;
+            border: 2px solid #55b33f;
+        }
+        .swiper-button-next {
+            border: 2px solid #55b33f;
+        }
+    }
+    &.theme-11 {
+        background: url("/public/wordpress/img/background/cover-54.png");
+        background-position: center bottom;
+        background-size: cover;
+    }
+}
+
+.custom-section-8 {
+    &.theme-5 {
+        background-repeat: no-repeat, no-repeat, no-repeat !important;
+        background: url("/public/wordpress/img/background/cover-21.png"),
+            url("/public/wordpress/img/background/cover-22.png"),
+            url("/public/wordpress/img/background/cover-23.png");
+        background-position: left center, right center, center !important;
+        background-size: auto, 30%, auto !important;
+        @media screen and (max-width: 998px) {
+            background-size: 40px, auto, auto !important;
+            background: url("/public/wordpress/img/background/cover-21.png"),
+                url("/public/wordpress/img/background/cover-22.png"),
+                url("/public/wordpress/img/background/cover-24.png");
+        }
+    }
+    &.theme-8 {
+        background: url("/public/wordpress/img/background/cover-40.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-41.png");
+        }
+    }
+    &.theme-11 {
+        background: url("/public/wordpress/img/background/cover-51.png"),
+            url("/public/wordpress/img/background/cover-53.png"),
+            url("/public/wordpress/img/background/cover-52.png");
+        background-position: center center, right bottom 90px, right center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background-size: 200px, auto, 60px;
+            background-position: center center, right bottom 200px, right center;
+        }
+    }
+
+    &.theme-12 {
+        background: url("/public/wordpress/img/background/cover-57.png");
+        background-position: right bottom 10px;
+        background-repeat: no-repeat;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background-size: 254px;
+        }
+    }
+
+    &.theme-13 {
+        background: url("/public/wordpress/img/background/cover-60.png"),
+            url("/public/wordpress/img/background/cover-61.png");
+        background-position: center, center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        @media screen and (max-width: 998px) {
+            background: url("/public/wordpress/img/background/cover-60.png"),
+                url("/public/wordpress/img/background/cover-62.png");
+            background-size: 200px, auto;
+        }
+    }
+}

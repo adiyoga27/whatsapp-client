@@ -1,0 +1,289 @@
+{
+  "public/wordpress/font/Inter-Light.ttf": {
+    "file": "assets/Inter-Light.c44ff7a5.ttf",
+    "src": "public/wordpress/font/Inter-Light.ttf"
+  },
+  "public/wordpress/font/Inter-Regular.ttf": {
+    "file": "assets/Inter-Regular.41ab0f70.ttf",
+    "src": "public/wordpress/font/Inter-Regular.ttf"
+  },
+  "public/wordpress/font/Inter-Medium.ttf": {
+    "file": "assets/Inter-Medium.10d48331.ttf",
+    "src": "public/wordpress/font/Inter-Medium.ttf"
+  },
+  "public/wordpress/font/Inter-SemiBold.ttf": {
+    "file": "assets/Inter-SemiBold.e8cbc2b8.ttf",
+    "src": "public/wordpress/font/Inter-SemiBold.ttf"
+  },
+  "public/wordpress/font/Poppins-Regular.ttf": {
+    "file": "assets/Poppins-Regular.707fdc5c.ttf",
+    "src": "public/wordpress/font/Poppins-Regular.ttf"
+  },
+  "public/wordpress/font/Inter-Bold.ttf": {
+    "file": "assets/Inter-Bold.790c108b.ttf",
+    "src": "public/wordpress/font/Inter-Bold.ttf"
+  },
+  "public/wordpress/font/Poppins-Medium.ttf": {
+    "file": "assets/Poppins-Medium.8d909883.ttf",
+    "src": "public/wordpress/font/Poppins-Medium.ttf"
+  },
+  "public/wordpress/font/Poppins-SemiBold.ttf": {
+    "file": "assets/Poppins-SemiBold.248c0244.ttf",
+    "src": "public/wordpress/font/Poppins-SemiBold.ttf"
+  },
+  "public/wordpress/font/Poppins-Bold.ttf": {
+    "file": "assets/Poppins-Bold.7219547e.ttf",
+    "src": "public/wordpress/font/Poppins-Bold.ttf"
+  },
+  "public/wordpress/font/Kanit-Regular.ttf": {
+    "file": "assets/Kanit-Regular.545410e2.ttf",
+    "src": "public/wordpress/font/Kanit-Regular.ttf"
+  },
+  "public/wordpress/img/background/cover-33.png": {
+    "file": "assets/cover-33.ba7b621e.png",
+    "src": "public/wordpress/img/background/cover-33.png"
+  },
+  "public/wordpress/font/Kanit-Medium.ttf": {
+    "file": "assets/Kanit-Medium.3854bf6e.ttf",
+    "src": "public/wordpress/font/Kanit-Medium.ttf"
+  },
+  "public/wordpress/font/Kanit-SemiBold.ttf": {
+    "file": "assets/Kanit-SemiBold.f4a06722.ttf",
+    "src": "public/wordpress/font/Kanit-SemiBold.ttf"
+  },
+  "public/wordpress/img/background/cover-32.png": {
+    "file": "assets/cover-32.1643885d.png",
+    "src": "public/wordpress/img/background/cover-32.png"
+  },
+  "public/wordpress/img/background/cover-2.png": {
+    "file": "assets/cover-2.8135dfb0.png",
+    "src": "public/wordpress/img/background/cover-2.png"
+  },
+  "public/wordpress/img/background/cover-28.png": {
+    "file": "assets/cover-28.6a1695be.png",
+    "src": "public/wordpress/img/background/cover-28.png"
+  },
+  "public/wordpress/img/background/cover-30.png": {
+    "file": "assets/cover-30.f1ed4714.png",
+    "src": "public/wordpress/img/background/cover-30.png"
+  },
+  "public/wordpress/img/background/cover-20.png": {
+    "file": "assets/cover-20.cec063e6.png",
+    "src": "public/wordpress/img/background/cover-20.png"
+  },
+  "public/wordpress/img/background/cover-42.png": {
+    "file": "assets/cover-42.0558cf50.png",
+    "src": "public/wordpress/img/background/cover-42.png"
+  },
+  "public/wordpress/img/background/cover-44.png": {
+    "file": "assets/cover-44.8df85e9b.png",
+    "src": "public/wordpress/img/background/cover-44.png"
+  },
+  "public/wordpress/img/background/cover-38.png": {
+    "file": "assets/cover-38.a346cdb4.png",
+    "src": "public/wordpress/img/background/cover-38.png"
+  },
+  "public/wordpress/img/background/cover-67.png": {
+    "file": "assets/cover-67.9e885eb5.png",
+    "src": "public/wordpress/img/background/cover-67.png"
+  },
+  "public/wordpress/img/background/cover-39.png": {
+    "file": "assets/cover-39.2c8cba64.png",
+    "src": "public/wordpress/img/background/cover-39.png"
+  },
+  "public/wordpress/img/background/cover-10.png": {
+    "file": "assets/cover-10.cb9df1c6.png",
+    "src": "public/wordpress/img/background/cover-10.png"
+  },
+  "public/wordpress/img/background/cover-36.png": {
+    "file": "assets/cover-36.f23ccf7e.png",
+    "src": "public/wordpress/img/background/cover-36.png"
+  },
+  "public/wordpress/img/background/cover-27.png": {
+    "file": "assets/cover-27.e6d01a34.png",
+    "src": "public/wordpress/img/background/cover-27.png"
+  },
+  "public/wordpress/img/background/cover-48.png": {
+    "file": "assets/cover-48.32b0c0b9.png",
+    "src": "public/wordpress/img/background/cover-48.png"
+  },
+  "public/wordpress/img/background/cover-59.png": {
+    "file": "assets/cover-59.8abdda2a.png",
+    "src": "public/wordpress/img/background/cover-59.png"
+  },
+  "public/wordpress/img/background/cover-66.png": {
+    "file": "assets/cover-66.c626934f.png",
+    "src": "public/wordpress/img/background/cover-66.png"
+  },
+  "public/wordpress/img/background/cover-25.png": {
+    "file": "assets/cover-25.c8763ca5.png",
+    "src": "public/wordpress/img/background/cover-25.png"
+  },
+  "public/wordpress/img/background/cover-29.png": {
+    "file": "assets/cover-29.37eecfa5.png",
+    "src": "public/wordpress/img/background/cover-29.png"
+  },
+  "public/wordpress/img/background/cover-12.png": {
+    "file": "assets/cover-12.cb3aed6c.png",
+    "src": "public/wordpress/img/background/cover-12.png"
+  },
+  "public/wordpress/img/background/cover-16.png": {
+    "file": "assets/cover-16.8c181132.png",
+    "src": "public/wordpress/img/background/cover-16.png"
+  },
+  "public/wordpress/img/background/cover-65.png": {
+    "file": "assets/cover-65.f81baffd.png",
+    "src": "public/wordpress/img/background/cover-65.png"
+  },
+  "public/wordpress/img/background/cover-46.png": {
+    "file": "assets/cover-46.1826d5f2.png",
+    "src": "public/wordpress/img/background/cover-46.png"
+  },
+  "public/wordpress/img/background/cover-63.png": {
+    "file": "assets/cover-63.a544bba5.png",
+    "src": "public/wordpress/img/background/cover-63.png"
+  },
+  "public/wordpress/img/background/cover-21.png": {
+    "file": "assets/cover-21.f327c09a.png",
+    "src": "public/wordpress/img/background/cover-21.png"
+  },
+  "public/wordpress/img/background/cover-54.png": {
+    "file": "assets/cover-54.f6da7e23.png",
+    "src": "public/wordpress/img/background/cover-54.png"
+  },
+  "public/wordpress/img/background/cover-40.png": {
+    "file": "assets/cover-40.96fb5da4.png",
+    "src": "public/wordpress/img/background/cover-40.png"
+  },
+  "public/wordpress/img/background/cover-41.png": {
+    "file": "assets/cover-41.608ef984.png",
+    "src": "public/wordpress/img/background/cover-41.png"
+  },
+  "public/wordpress/img/background/cover-57.png": {
+    "file": "assets/cover-57.a1c852f4.png",
+    "src": "public/wordpress/img/background/cover-57.png"
+  },
+  "public/wordpress/img/background/cover-4.png": {
+    "file": "assets/cover-4.28feaa07.png",
+    "src": "public/wordpress/img/background/cover-4.png"
+  },
+  "public/wordpress/img/background/cover-51.png": {
+    "file": "assets/cover-51.f473fb2b.png",
+    "src": "public/wordpress/img/background/cover-51.png"
+  },
+  "public/wordpress/img/background/cover-60.png": {
+    "file": "assets/cover-60.43da2736.png",
+    "src": "public/wordpress/img/background/cover-60.png"
+  },
+  "public/wordpress/img/background/cover-1.png": {
+    "file": "assets/cover-1.9d2ca140.png",
+    "src": "public/wordpress/img/background/cover-1.png"
+  },
+  "public/wordpress/img/background/cover-45.png": {
+    "file": "assets/cover-45.0764280c.png",
+    "src": "public/wordpress/img/background/cover-45.png"
+  },
+  "public/wordpress/img/background/cover-43.png": {
+    "file": "assets/cover-43.7ae9901d.png",
+    "src": "public/wordpress/img/background/cover-43.png"
+  },
+  "public/wordpress/img/background/cover-37.png": {
+    "file": "assets/cover-37.7beae00f.png",
+    "src": "public/wordpress/img/background/cover-37.png"
+  },
+  "public/wordpress/img/background/cover-34.png": {
+    "file": "assets/cover-34.031f14b5.png",
+    "src": "public/wordpress/img/background/cover-34.png"
+  },
+  "public/wordpress/img/background/cover-64.png": {
+    "file": "assets/cover-64.f4158dbe.png",
+    "src": "public/wordpress/img/background/cover-64.png"
+  },
+  "public/wordpress/img/background/cover-47.png": {
+    "file": "assets/cover-47.5572431e.png",
+    "src": "public/wordpress/img/background/cover-47.png"
+  },
+  "public/wordpress/img/background/cover-11.png": {
+    "file": "assets/cover-11.718547cf.png",
+    "src": "public/wordpress/img/background/cover-11.png"
+  },
+  "public/wordpress/img/background/cover-22.png": {
+    "file": "assets/cover-22.e4b5f773.png",
+    "src": "public/wordpress/img/background/cover-22.png"
+  },
+  "public/wordpress/img/background/cover-5.png": {
+    "file": "assets/cover-5.97cd28cf.png",
+    "src": "public/wordpress/img/background/cover-5.png"
+  },
+  "public/wordpress/img/background/cover-53.png": {
+    "file": "assets/cover-53.678ac944.png",
+    "src": "public/wordpress/img/background/cover-53.png"
+  },
+  "public/wordpress/img/background/cover-9.png": {
+    "file": "assets/cover-9.526bc69f.png",
+    "src": "public/wordpress/img/background/cover-9.png"
+  },
+  "public/wordpress/img/background/cover-19.png": {
+    "file": "assets/cover-19.22653d8f.png",
+    "src": "public/wordpress/img/background/cover-19.png"
+  },
+  "public/wordpress/img/background/cover-61.png": {
+    "file": "assets/cover-61.2d78fbe4.png",
+    "src": "public/wordpress/img/background/cover-61.png"
+  },
+  "public/wordpress/img/background/cover-62.png": {
+    "file": "assets/cover-62.92012de8.png",
+    "src": "public/wordpress/img/background/cover-62.png"
+  },
+  "public/wordpress/img/background/cover-3.png": {
+    "file": "assets/cover-3.c853a366.png",
+    "src": "public/wordpress/img/background/cover-3.png"
+  },
+  "public/wordpress/img/background/cover-24.png": {
+    "file": "assets/cover-24.7aa9d1b5.png",
+    "src": "public/wordpress/img/background/cover-24.png"
+  },
+  "public/wordpress/img/background/cover-23.png": {
+    "file": "assets/cover-23.b2b3cca6.png",
+    "src": "public/wordpress/img/background/cover-23.png"
+  },
+  "public/wordpress/img/background/cover-13.png": {
+    "file": "assets/cover-13.43fd9237.png",
+    "src": "public/wordpress/img/background/cover-13.png"
+  },
+  "public/wordpress/img/background/cover-6.png": {
+    "file": "assets/cover-6.2f523ff9.png",
+    "src": "public/wordpress/img/background/cover-6.png"
+  },
+  "public/wordpress/img/background/cover-52.png": {
+    "file": "assets/cover-52.10a8f5a7.png",
+    "src": "public/wordpress/img/background/cover-52.png"
+  },
+  "public/wordpress/img/background/cover-17.png": {
+    "file": "assets/cover-17.9754cc7a.png",
+    "src": "public/wordpress/img/background/cover-17.png"
+  },
+  "public/wordpress/img/background/cover-7.png": {
+    "file": "assets/cover-7.17dbda67.png",
+    "src": "public/wordpress/img/background/cover-7.png"
+  },
+  "public/wordpress/img/background/cover-8.png": {
+    "file": "assets/cover-8.f67c1a86.png",
+    "src": "public/wordpress/img/background/cover-8.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.6be1597f.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/sass/wordpress.scss": {
+    "file": "assets/wordpress.98d22810.css",
+    "src": "resources/sass/wordpress.scss",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.1af4b246.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  }
+}

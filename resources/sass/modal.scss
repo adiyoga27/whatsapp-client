@@ -1,0 +1,113 @@
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    &.faster {
+        -webkit-animation-duration: 500ms;
+        animation-duration: 500ms;
+    }
+}
+@media screen and (max-width: 998px) {
+    .sider-swipe {
+        &.fadeIn {
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+
+            .sider-content {
+                -webkit-animation-name: fadeInContentSwipe;
+                animation-name: fadeInContentSwipe;
+            }
+        }
+
+        &.fadeOut {
+            -webkit-animation-name: fadeOut;
+            animation-name: fadeOut;
+
+            .sider-content {
+                -webkit-animation-name: fadeOutContentSwipe;
+                animation-name: fadeOutContentSwipe;
+            }
+        }
+    }
+}
+.modal-up {
+    &.fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+
+        .modal-content {
+            -webkit-animation-name: fadeInContent;
+            animation-name: fadeInContent;
+        }
+    }
+
+    &.fadeOut {
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
+
+        .modal-content {
+            -webkit-animation-name: fadeOutContent;
+            animation-name: fadeOutContent;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeInContent {
+    from {
+        transform: translate3d(0, 100vh, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeOutContent {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 100vh, 0);
+    }
+}
+@keyframes fadeInContentSwipe {
+    from {
+        transform: translate(-125%, 0px);
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeOutContentSwipe {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-125%, 0px);
+    }
+}

@@ -1,0 +1,15 @@
+@extends('wordpress.layout.master')
+@section('content')
+    @include('wordpress.component.' . $profile->template . '.header')
+    @include('wordpress.component.' . $profile->template . '.section-1')
+    @include('wordpress.component.' . $profile->template . '.section-3')
+    @include('wordpress.component.' . $profile->template . '.section-4')
+    @include('wordpress.component.' . $profile->template . '.section-5')
+    @include('wordpress.component.' . $profile->template . '.section-6')
+    @include('wordpress.component.' . $profile->template . '.section-8')
+    @include('wordpress.component.modal')
+    @include('wordpress.component.' . $profile->template . '.footer')
+@stop
+@section('script')
+    @include('wordpress.component.' . $profile->template . '.script')
+@stop

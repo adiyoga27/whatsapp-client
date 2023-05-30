@@ -1,0 +1,13 @@
+@import "./font.scss";
+@import "./customs.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    font-family: Metropolis Regular;
+    overflow-x: hidden;
+    color: #262626;
+    .custom-first-padding {
+        padding-top: 190px;
+    }
+}
