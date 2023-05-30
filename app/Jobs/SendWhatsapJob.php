@@ -35,7 +35,7 @@ class SendWhatsapJob implements ShouldQueue
     public function handle()
     {
         $whatsapp = Whatsapp::first();
-        $queue = QueueMessage::where('id', $this->queueID)->update([
+        QueueMessage::where('id', $this->queueID)->update([
             'status' => 'ongoing'
         ]);
     
