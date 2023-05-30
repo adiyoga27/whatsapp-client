@@ -429,17 +429,18 @@
                         @can('isAdmin')
                         <li>
                             <a href="{{ route('user.index') }}" class="waves-effect">
-                                <i class="bx bx-user"></i>
-                                <span key="t-user-header">Permission</span>
+                                <i class='bx bx-cog'></i>
+                                <span key="t-permission-header">Permission</span>
                             </a>
                         </li>
-                        @endcan
+                     
                         <li>
                             <a href="{{ route('user.index') }}" class="waves-effect">
                                 <i class="bx bx-user"></i>
                                 <span key="t-user-header">User</span>
                             </a>
                         </li>
+                        @endcan
                         <li>
                             <a href="{{ route('whatsapp.index') }}" class="waves-effect">
                                 <i class='bx bxl-whatsapp'></i>
@@ -447,7 +448,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('user.index') }}" class="waves-effect">
+                            <a href="{{ route('phonebook.index') }}" class="waves-effect">
                                 <i class='bx bx-book-bookmark' ></i>
                                 <span key="t-book-header">Phone Book</span>
                             </a>
