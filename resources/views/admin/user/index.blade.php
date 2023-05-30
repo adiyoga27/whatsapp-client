@@ -55,16 +55,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                @can('isSuperadmin')
-                                                    <button class="btn btn-info waves-effect waves-light me-2"
-                                                        id="btn-access-view"
-                                                        data-access-view-url="{{ route('whatsapp-access.store', [$data->id]) }}"
-                                                        data-bs-toggle="modal"
-                                                        data-whastapp="{{ route('whtasapp-access.get-whatsapp') }}"
-                                                        data-whatsapp-acc-id="{{ $data->whatsapp_access_id }}"
-                                                        data-bs-target="#access-modal">WhatsApp
-                                                        Access</button>
-                                                @endcan
+                                        
                                                 <a href="{{ route('user.edit', [$data->id]) }}"
                                                     class="btn btn-success me-2"><i class="bx bx-edit-alt"></i> <span
                                                         key="t-edit">Custom</span></a>

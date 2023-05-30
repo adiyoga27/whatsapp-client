@@ -426,9 +426,11 @@
                                 <span key="t-dashboards">Dashboards</span>
                             </a>
                         </li>
-                        @can('isAdmin')
+                        @if (Auth()->user()->can('isAdmin') || Auth()->user()->can('isSuperadmin'))
+                            
+                        {{-- @can(['isAdmin', 'isSuperadmin']) --}}
                         <li>
-                            <a href="{{ route('user.index') }}" class="waves-effect">
+                            <a href="{{ route('permission.index') }}" class="waves-effect">
                                 <i class='bx bx-cog'></i>
                                 <span key="t-permission-header">Permission</span>
                             </a>
@@ -440,7 +442,9 @@
                                 <span key="t-user-header">User</span>
                             </a>
                         </li>
-                        @endcan
+                        {{-- @endcan --}}
+                        @endif
+
                         <li>
                             <a href="{{ route('whatsapp.index') }}" class="waves-effect">
                                 <i class='bx bxl-whatsapp'></i>

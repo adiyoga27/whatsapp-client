@@ -78,7 +78,7 @@
                                             <div class="col-lg">
                                                 <div class="mb-3">
 
-                                                    <label for="message" key="t-message">message</label>
+                                                    <label for="message" key="t-message">Message</label>
                                                     <textarea name="message" class="form-control @error('message') is-invalid @enderror" id="message" rows="15"
                                                         placeholder="Enter message">{{ old('message') }}</textarea>
 

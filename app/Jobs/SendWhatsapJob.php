@@ -12,6 +12,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
+use PSpell\Config;
 
 class SendWhatsapJob implements ShouldQueue
 {
@@ -34,6 +35,7 @@ class SendWhatsapJob implements ShouldQueue
      */
     public function handle()
     {
+        $whatsappUrl = Config('whatsapp.whatsapp_url');
         $whatsapp = Whatsapp::first();
         QueueMessage::where('id', $this->queueID)->update([
             'status' => 'ongoing'
@@ -45,9 +47,10 @@ class SendWhatsapJob implements ShouldQueue
             sleep($queue->message->duration ?? 5);
             $responsMessage = Http::timeout(10)->withHeaders([
                 'Content-Type' => 'application/json',
+                'authorization' => $queue->message->whatsapp->apikey
             ])
                 ->asJson()
-                ->post($whatsapp->url . '/v2/send-message', [
+                ->post($whatsappUrl . '/send-message', [
                     'number' => $queue->phone,
                     'message' => $queue->message->message
                 ]);
@@ -82,14 +85,15 @@ class SendWhatsapJob implements ShouldQueue
 
                 $response =  Http::timeout(10)->withHeaders([
                     'Content-Type' => 'application/json',
+                    'authorization' => $queue->message->whatsapp->apikey
                 ])
                     ->asJson()
-                    ->post($whatsapp->url . '/v2/send-media', [
+                    ->post($whatsappUrl . '/send-media', [
                         'number' => $queue->phone,
                         'message' => ' ',
                         'filetype' => $fileType,
-                        // 'url' => url('storage') . '/' . ($file->url),
-                        'url' => 'https://saddannusantara.com/Pamflet-Susunan-Acara-Alur-Acara-dan-ZOO-Map-VSD.pdf'
+                        'url' => url('storage') . '/' . ($file->url),
+                        // 'url' => 'https://saddannusantara.com/Pamflet-Susunan-Acara-Alur-Acara-dan-ZOO-Map-VSD.pdf'
                     ]);
             }
 

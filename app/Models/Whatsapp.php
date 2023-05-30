@@ -14,7 +14,14 @@ class Whatsapp extends Model
         'name',
         'url',
         'is_active',
-        'expired_at'
+        'expired_at',
+        'prefix',
+        'response',
+        'apikey'
+    ];
+
+    protected $casts = [
+        'response' => 'array'
     ];
 
     public function message()
@@ -25,5 +32,10 @@ class Whatsapp extends Model
     public function whatsapp()
     {
         return $this->hasMany(PhoneBook::class);
+    }
+
+    public function permission()
+    {
+       return $this->hasMany(Permission::class, 'whatsapp_id', 'id');
     }
 }

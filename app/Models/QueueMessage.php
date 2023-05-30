@@ -32,4 +32,6 @@ class QueueMessage extends Model
     {
         return $this->hasMany(AttachmentMessage::class, 'message_id', 'message_id');
     }
+
+    
 }

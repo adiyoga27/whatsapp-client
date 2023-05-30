@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PhoneBookController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -134,12 +135,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     Route::resource('user', UserController::class)
         ->except(['show']);
 
-    // article comment
-    Route::controller(ArticleCommentController::class)->group(function () {
-        Route::get('/comment/article', 'index')->name('article.comment.index');
-    });
-
-
     // book comment
     Route::controller(BookCommentController::class)->group(function () {
         Route::get('/comment/book', 'index')->name('book.comment.index');
@@ -166,6 +161,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     Route::get('whatsapp/qrcode/{id}', [WhatsAppController::class, 'setup']);
     // Phone Book
     Route::resource('phonebook', PhoneBookController::class)->except('show');
+
+        // Phone Book
+        Route::resource('permission', PermissionController::class)->except('show');
 
     // contact phonebook
     Route::controller(ContactPhoneBookController::class)->group(function () {

@@ -44,7 +44,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            {{-- <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="basicpill-url-input" key="t-table-url">URL</label>
                                                     <input type="text"
@@ -59,7 +59,7 @@
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <div class="row">

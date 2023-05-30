@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Models\Whatsapp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class WhatsAppController extends Controller
 {
@@ -25,15 +27,35 @@ class WhatsAppController extends Controller
 
     public function store(Request $request, Whatsapp $whatsapp)
     {
-        $data = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'url' => ['required', 'string', 'max:255'],
-            'is_active' => ['required', 'numeric']
-        ]);
+        try {
+            DB::beginTransaction();
+            $data = $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                // 'url' => ['required', 'string', 'max:255'],
+                'is_active' => ['required', 'numeric']
+            ]);
+            $data['prefix'] = 'GS-'.(1000000 + $whatsapp->latest()->first()->id + 1);
 
-        $whatsapp->create($data);
+            $response = Http::post('http://wabot.galkasoft.id:7991/create-client', [
+                'client_id' => $data['prefix'],
+                'name' => $data['name'],
+                'description' => "Whatsapp Galkasoft",
+                'expired_at' => "2023-01-01 00:00:00"
+            ]);
 
-        return redirect()->route('whatsapp.index')->with('success', 'Add data successfully');
+            $result = $response->json();
+            $data['response']= $result;
+            $data['apikey']= $result['data']['api_key'];
+            $whatsapp->create($data);
+
+             DB::commit();
+            return redirect()->route('whatsapp.index')->with('success', 'Add data successfully');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            throw $th;
+        }
+       
     }
 
     public function edit($id)
@@ -49,7 +71,7 @@ class WhatsAppController extends Controller
     {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'url' => ['required', 'string', 'max:255'],
+            // 'url' => ['required', 'string', 'max:255'],
             'is_active' => ['required', 'numeric']
         ]);
 

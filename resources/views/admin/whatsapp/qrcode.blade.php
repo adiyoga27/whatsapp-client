@@ -43,58 +43,88 @@
 @endsection
 @section('javascript')
     <script>
-        var socket = io.connect('{{ $whatsapp->url }}');
-        $('#cardimg').html(
-            `<img src="{{ url('assets/images/loading.gif') }}" class="card-img-top center" alt="cardimg" id="qrcode"  style="height:250px; width:250px;">`
-        );
+     
 
-        socket.emit('initial', 'sdf');
-        socket.on('loader', function() {
-            $('#cardimg').html(
-                `<img src="{{ url('assets/images/loading.gif') }}" class="card-img-top center" alt="cardimg" id="qrcode"  style="height:250px; width:250px;">`
-            );
-        })
-        socket.on('message', function(msg) {
-            $('.log').html(`<li>` + msg + `</li>`);
-        })
-        socket.on('qr', function(src) {
-            $('#cardimg').html(` <img src="` + src +
+
+    var apiKey = "{{$whatsapp->apikey}}";
+    var isLogin = false;
+    var socket;
+    $(document).ready(function () {
+        socket = io('http://wabot.galkasoft.id:7991');
+   
+
+        socket.emit("init", {
+                    api_key: apiKey,
+        });
+        socket.on("device", function (data) {
+            if(data.api_key == apiKey){
+             $('#cardimg').html(`<h2 class="text-center text-success mt-4">Whatsapp Connected.<br>` + data.message + `<h2>`);
+
+            if (data.status == 'scan_qr') {
+                console.log(data);
+              
+                $('#cardimg').html(` <img src="` + data.qr +
                 `" class="card-img-top" alt="cardimg" id="qrcode" style="height:250px; width:250px;">`);
-        });
+            }
+            if (data.status == 'connected') {
+             $('#cardimg').html(`<h2 class="text-center text-success mt-4">Whatsapp Connected.<br>` + data.message + `<h2>`);
+              
 
-        socket.on('authenticated', function(src) {
-            console.log(src);
-            $('#cardimg').html(`<h2 class="text-center text-success mt-4">Whatsapp Connected.<br>` + src + `<h2>`);
-        });
-        socket.on('user', function(src) {
-            console.log(src);
-            $('#cardimg').html(`<h2 class="text-center text-success mt-4">Whatsapp Connected.<br>` + src.id + ' (' +
-                src.name + ') ' + `<h2>`);
-        });
-
-        $('#logout').click(function() {
-            $('#cardimg').html(`<h2 class="text-center text-dark mt-4">Please wait..<h2>`);
-            $('.log').html(`<li>Connecting..</li>`);
-            socket.emit('logout', 'delete');
-        })
-
-        $('#scanqrr').click(function() {
-            $('#cardimg').html(
+            }
+            if (data.status == 'logout') {
+                $('#cardimg').html(`<h2 class="text-center text-dark mt-4">Please wait..<h2>`);
+                $('.log').html(`<li>Connecting..</li>`);
+                socket.emit('logout', 'delete');
+            }
+            if (data.status == 'loading') {
                 `<img src="{{ url('assets/images/loading.gif') }}" class="card-img-top center" alt="cardimg" id="qrcode"  style="height:250px; width:250px;">`
-            );
+            }
+            if (data.status == 'failed') {
+                $('#device-whatsapp').hide();
+                $('#loading').show();
+                alert(data.message);
+            }
+            console.log(data);
+            }
 
-            socket.emit('scanqr', 'scanqr');
-        })
-        $('#cekstatus').click(function() {
-            $('#cardimg').html(
-                `<img src="{{ url('assets/images/loading.gif') }}" class="card-img-top center" alt="cardimg" id="qrcode"  style="height:250px; width:250px;">`
-            );
+           
+            // $('#qrcode').attr("src", data.src);
+            // $(`.client.client-${data.id} #qrcode`).show();
+        });
+    });
 
-            socket.emit('check', 'check');
-        })
+    function find() {
+        apiKey = $('#api-key').val();
+        socket.emit("find", {
+                    api_key: apiKey,
+        });
+        if(apiKey == ""){
+            alert('Kolom apikey tidak boleh kosong !!!');
+            return;
+        }
+        $('#loading').show();
+        $('#lines').show();
+        $('#sub-title').text('Please Waiting ....');
+        $('#title').text("Api Key : "+apiKey);
+        socket.emit("init", {
+                    api_key: apiKey,
+        });
+        $('#device-whatsapp').show();
 
-        socket.on('isdelete', function(msg) {
-            $('#cardimg').html(msg);
-        })
+    }
+
+    function logout() {
+        apiKey = $('#api-key').val();
+        socket.emit("logout", {
+                    api_key: apiKey,
+        });
+    }
+    function status(params) {
+        apiKey = $('#api-key').val();
+        socket.emit("refresh", {
+                    api_key: apiKey,
+        });
+    }
+
     </script>
 @endsection

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AttachmentMessage;
 use App\Models\Message;
+use App\Models\Permission;
 use App\Models\Whatsapp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,8 +24,9 @@ class MessageController extends Controller
 
     public function create()
     {
+        
         $data = [
-            'whatsapp' => Whatsapp::all()
+            'whatsapp' => Whatsapp::whereHas('permission', fn($q) => $q->where('user_id',  Auth::user()->id))->get()
         ];
 
         return view('admin.message.create', $data);
