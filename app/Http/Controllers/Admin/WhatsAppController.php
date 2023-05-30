@@ -34,7 +34,7 @@ class WhatsAppController extends Controller
                 // 'url' => ['required', 'string', 'max:255'],
                 'is_active' => ['required', 'numeric']
             ]);
-            $data['prefix'] = 'GS-'.(1000000 + $whatsapp->latest()->first()->id + 1);
+            $data['prefix'] = 'GS-'.(1000000 + ($whatsapp->latest()->first()->id ?? 0) + 1);
 
             $response = Http::post('http://wabot.galkasoft.id:7991/create-client', [
                 'client_id' => $data['prefix'],
