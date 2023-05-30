@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->call(new SetExpiredDate)->everyMinute();
-        $schedule->call(new SendMessage)->everyFiveMinutes();
+        $schedule->call(new SendMessage)->everyMinute();
     }
 
     /**
