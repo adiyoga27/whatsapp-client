@@ -426,246 +426,36 @@
                                 <span key="t-dashboards">Dashboards</span>
                             </a>
                         </li>
-
-
-                        {{-- <li class="menu-title" key="t-apps">Book</li> --}}
-
-                        {{-- book --}}
-                        {{-- <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bxs-book-open"></i>
-                                <span key="t-book">Book</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('book.index') }}" key="t-all-book">All Book</a></li>
-                                @can('isSuperadmin')
-                                    <li><a href="{{ route('book.comment.index') }}" key="t-book-comment">Book Comment</a></li>
-                                    <li><a href="{{ route('book-recovery') }}" key="t-recovery">Recovery</a></li>
-                                @endcan
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-book-category">Book
-                                            Category</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="{{ route('book-category.index') }}"
-                                                    key="t-light-all-category">All
-                                                    Category</a></li>
-                                            @can('isSuperadmin')
-                                                <li><a href="{{ route('recovery.bookcategory') }}"
-                                                        key="t-recovery">Recovery</a></li>
-                                            @endcan
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </ul>
-                        </li> --}}
-
-                        {{-- article --}}
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-news "></i>
-                                <span key="t-article-header">Article</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('article.index') }}" key="t-article-sub-header">All Article</a>
-                                </li>
-                                @can('isSuperadmin')
-                                    <li><a href="{{ route('article.comment.index') }}" key="t-article-comment">Article
-                                            Comment</a></li>
-                                    <li><a href="{{ route('recovery.article') }}" key="t-recovery">Recovery</a></li>
-                                @endcan
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow"
-                                            key="t-article-category-header">Article
-                                            Category</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="{{ route('article-category.index') }}"
-                                                    key="t-article-category-sub-header">All Category</a></li>
-                                            @can('isSuperadmin')
-                                                <li><a href="{{ route('recovery.article.category') }}"
-                                                        key="t-recovery">Recovery</a></li>
-                                            @endcan
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </ul>
-                        </li>
-
-                        {{-- product --}}
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-box"></i>
-                                <span key="t-product-header">Product</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('product.index') }}" key="t-product-sub-header">All Product</a>
-                                </li>
-                                @can('isSuperadmin')
-                                    <li><a href="{{ route('recovery.product') }}" key="t-recovery">Recovery</a></li>
-                                @endcan
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow"
-                                            key="t-product-category-header">Product
-                                            Category</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="{{ route('product-category.index') }}"
-                                                    key="t-product-category-sub-header">All Category</a></li>
-                                            @can('isSuperadmin')
-                                                <li><a href="{{ route('recovery.product.category') }}"
-                                                        key="t-recovery">Recovery</a></li>
-                                            @endcan
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </ul>
-                        </li>
-
-                        {{-- testimoni --}}
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-images"></i>
-                                <span key="t-testimonial-header">Testimonial</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('testimonial.index') }}" key="t-testimonial-sub-header">All
-                                        Testimonial</a></li>
-                            </ul>
-                        </li>
-                        @can('isSuperadmin')
-                            {{-- profile --}}
-                            <li>
-                                <a href="{{ route('profile-view') }}">
-                                    <i class="bx bx-grid-alt"></i>
-                                    <span key="t-profile-header">Profile</span>
-                                </a>
-                            </li>
-                            {{-- template --}}
-                            <li>
-                                <a href="{{ route('template.index') }}">
-                                    <i class="bx bx-border-all"></i>
-                                    <span key="t-template">Template</span>
-                                </a>
-                            </li>
-
-                            {{-- sosmed --}}
-                            <li>
-                                <a href="{{ route('sosmed.index') }}">
-                                    <i class="bx bx-dock-bottom"></i>
-                                    <span key="t-sosmed">Social Media</span>
-                                </a>
-                            </li>
-
-                            {{-- user --}}
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-user"></i>
-                                    <span key="t-user-header">User</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('user.index') }}" key="t-user-sub-header">All User</a></li>
-                                </ul>
-                            </li>
-                            {{-- whatsapp broadcast --}}
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <span class="badge rounded-pill bg-success float-end" key="t-new">New</span>
-                                    <i class="bx bx-conversation"></i>
-                                    <span key="t-header-broadcast">Broadcast WA</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('phonebook.index') }}" key="t-phonebook">Phone Book</a></li>
-                                    <li><a href="{{ route('message.index') }}" key="t-header-message">Message</a></li>
-                                    <li><a href="{{ route('whatsapp.index') }}" key="">WhatsApp</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <span class="badge rounded-pill bg-success float-end" key="t-new">New</span>
-                                    <i class="bx bx-basket"></i>
-                                    <span key="">Catalog</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('store.expedition.index') }}" key="">Store & Expedition</a>
-                                    </li>
-
-
-                                    @if (App\Models\Store::query()->pluck('store_address')->first() != null)
-                                        {{-- <li><a href="{{ route('variant.index') }}" key="t-variant-header">Variant</a></li> --}}
-                                        <li><a href="{{ route('product-variant.index') }}" key="t-product-variant">Product
-                                                Variant</a></li>
-                                        <li><a href="{{ route('bank.index') }}">Bank</a></li>
-                                        <li><a href="{{ route('order.index') }}" key="t-customer-order">Customer Order</a>
-                                        </li>
-                                    @endif
-
-                                </ul>
-                            </li>
-                        @endcan
                         @can('isAdmin')
-                            {{-- profile --}}
-                            <li>
-                                <a href="{{ route('profile-view') }}">
-                                    <i class="bx bx-grid-alt"></i>
-                                    <span key="t-profile-header">Profile</span>
-                                </a>
-                            </li>
-                            {{-- sosmed --}}
-                            <li>
-                                <a href="{{ route('sosmed.index') }}">
-                                    <i class="bx bx-dock-bottom"></i>
-                                    <span key="t-sosmed">Social Media</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="{{ route('user.index') }}" class="waves-effect">
+                                <i class="bx bx-user"></i>
+                                <span key="t-user-header">User</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('whatsapp.index') }}" class="waves-effect">
+                                <i class='bx bxl-whatsapp'></i>
+                                <span key="t-whatsapp-header">Whatsapp</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('user.index') }}" class="waves-effect">
+                                <i class='bx bx-book-bookmark' ></i>
+                                <span key="t-book-header">Phone Book</span>
+                            </a>
+                        </li>
+               
+                        <li>
+                            <a href="{{ route('message.index') }}" class="waves-effect">
+                                <i class="bx bx-conversation"></i>
+                                <span key="t-message-header">Message</span>
+                            </a>
+                        </li>
+               
 
-                            {{-- user --}}
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-user"></i>
-                                    <span key="t-user-header">User</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('user.index') }}" key="t-user-sub-header">All User</a></li>
-                                </ul>
-                            </li>
-
-                            {{-- whatsapp broadcast --}}
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <span class="badge rounded-pill bg-success float-end" key="t-new">New</span>
-                                    <i class="bx bx-conversation"></i>
-                                    <span key="t-header-broadcast">Broadcast WA</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('phonebook.index') }}" key="t-phonebook">Phone Book</a></li>
-                                    <li><a href="{{ route('message.index') }}" key="t-header-message">Message</a></li>
-                                    <li><a href="{{ route('whatsapp.index') }}" key="">WhatsApp</a></li>
-                                </ul>
-                            </li>
-                            {{-- catalog --}}
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <span class="badge rounded-pill bg-success float-end" key="t-new">New</span>
-                                    <i class="bx bx-basket"></i>
-                                    <span key="">Catalog</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('store.expedition.index') }}" key="">Store & Expedition</a>
-                                    </li>
-
-
-                                    @if (App\Models\Store::query()->pluck('store_address')->first() != null)
-                                        {{-- <li><a href="{{ route('variant.index') }}" key="t-variant-header">Variant</a></li> --}}
-                                        <li><a href="{{ route('product-variant.index') }}" key="t-product-variant">Product
-                                                Variant</a></li>
-                                        <li><a href="{{ route('bank.index') }}">Bank</a></li>
-                                        <li><a href="{{ route('order.index') }}" key="t-customer-order">Customer Order</a>
-                                        </li>
-                                    @endif
-
-                                </ul>
-                            </li>
+                          
+                       
                         @endcan
 
                     </ul>

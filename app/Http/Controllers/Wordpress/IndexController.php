@@ -22,10 +22,10 @@ class IndexController extends Controller
         ];
         return view('wordpress.index', [
             'profile' => $data,
-            'product' => Product::query()->where('is_active', 1)->get(),
-            'sosmed' => SocialMedia::all()[0],
-            'testimonial' => Testimonial::query()->where('is_active', 1)->get(),
-            'article' => Article::query()->with('ArticleCategories', 'User')->where('is_active', 1)->get(),
+            // 'product' => Product::query()->where('is_active', 1)->get(),
+            // 'sosmed' => SocialMedia::all()[0],
+            // 'testimonial' => Testimonial::query()->where('is_active', 1)->get(),
+            // 'article' => Article::query()->with('ArticleCategories', 'User')->where('is_active', 1)->get(),
             'meta'=> $meta
         ]);
     }

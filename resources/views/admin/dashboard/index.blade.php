@@ -98,7 +98,6 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium" key="t-article-total">Article In Total</p>
-                                    <h4 class="mb-0">{{ $article }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center ">
@@ -138,7 +137,6 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium" key="t-product-total">Product In Total</p>
-                                    <h4 class="mb-0">{{ $product }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">
@@ -158,7 +156,6 @@
                             <div class="d-flex">
                                 <div class="flex-grow-1">
                                     <p class="text-muted fw-medium" key="t-testimonial-total">Testimonial In Total</p>
-                                    <h4 class="mb-0">{{ $testimonial }}</h4>
                                 </div>
 
                                 <div class="flex-shrink-0 align-self-center">

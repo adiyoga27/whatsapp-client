@@ -33,10 +33,6 @@ class DashboardController extends Controller
 
         $data = [
             'user' => count(User::all()),
-            'article' => count(Article::all()),
-            'book' => count(Book::all()),
-            'product' => count(Product::all()),
-            'testimonial' => count(Testimonial::all()),
             'diskuse' => $diskuse,
             'total_disk_size' => $total_disk_size,
             'disk_used_size' => $disk_used_size

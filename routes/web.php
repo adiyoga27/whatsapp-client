@@ -21,7 +21,6 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\QueueController;
 use App\Http\Controllers\Admin\RecoveryController;
 use App\Http\Controllers\Admin\ResetPasswordController;
-use App\Http\Controllers\Admin\RestoreController;
 use App\Http\Controllers\Admin\SosmedController;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\TemplateController;
@@ -32,20 +31,7 @@ use App\Http\Controllers\Admin\WhatsappAccessController;
 use App\Http\Controllers\Admin\WhatsappBroadcastController;
 use App\Http\Controllers\Admin\WhatsAppController;
 use App\Http\Controllers\Api\TinymceController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Wordpress\ArticelController;
-use App\Http\Controllers\Wordpress\CartController;
-use App\Http\Controllers\Wordpress\ContactController;
-use App\Http\Controllers\Wordpress\IndexController;
-use App\Http\Controllers\Wordpress\InvoiceController as WordpressInvoice;
-use App\Http\Controllers\Wordpress\ProductController as WordpressProductController;
-use App\Http\Controllers\Wordpress\ShippingController;
-use App\Http\Controllers\Wordpress\TestimoniController;
-use App\Models\ArticleComment;
-use App\Models\ProductCategory;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,16 +44,11 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 |
 */
 
-Route::get('/', [IndexController::class, 'index']);
-Route::get('/product', [WordpressProductController::class, 'index']);
-Route::get('/product/{id}', [WordpressProductController::class, 'show']);
-Route::get('/testimonial', [TestimoniController::class, 'index']);
-Route::get('/article', [ArticelController::class, 'index']);
-Route::get('/article/{id}', [ArticelController::class, 'show']);
-Route::get('/contact', [ContactController::class, 'index']);
-Route::get('/cart', [CartController::class, 'index']);
-Route::get('/shipping', [ShippingController::class, 'index']);
-Route::get('/invoice/{id}', [WordpressInvoice::class, 'index']);
+Route::get('/', function()
+{
+    return view('auth.login');
+});
+
 
 
 
