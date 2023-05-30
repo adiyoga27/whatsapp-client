@@ -12,8 +12,16 @@ class SendMessage
 {
     public function __invoke()
     {
-        QueueMessage::where('status', 'progress')->limit(30)->get()->each(fn ($item) => Bus::dispatch(new SendWhatsapJob(
-            queueID: $item->id
-        )));
+        $queues = QueueMessage::where('status', 'progress')->limit(30)->get();
+        foreach ($queues as $queue) {
+            QueueMessage::where('id',  $queue->id)->update([
+                'status', 'ongoing'
+            ]);
+            Bus::dispatch(new SendWhatsapJob(
+                queueID: $queue->id
+            ));
+        }
+     
+
     }
 }
