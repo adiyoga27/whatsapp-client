@@ -67,6 +67,7 @@ class SendWhatsapJob implements ShouldQueue
                         'url' => url('storage') . '/' . ($file->url),
                         // 'url' => $val
                     ]);
+                    dd($response);
             }
 
 
