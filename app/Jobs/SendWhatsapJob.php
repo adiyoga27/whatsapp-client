@@ -38,6 +38,32 @@ class SendWhatsapJob implements ShouldQueue
         $queue = QueueMessage::where('id', $this->queueID)->first();
 
         try {
+            sleep($queue->message->duration ?? 5);
+
+            $responsMessage = Http::timeout(10)->withHeaders([
+                'Content-Type' => 'application/json',
+            ])
+                ->asJson()
+                ->post($whatsapp->url . '/v2/send-message', [
+                    'number' => $queue->phone,
+                    'message' => $queue->message->message
+                ]);
+
+            if ($responsMessage->status() == 200) {
+                $queue->update([
+                    'status'  => 'success',
+                    'response' => $responsMessage->body()
+                ]);
+            } elseif ($responsMessage->status() == 400) {
+                $queue->update([
+                    'status' => 'failed',
+                    'response' => [
+                        'status' => 400,
+                        'message' => $queue->message->message
+                    ]
+                ]);
+            }
+            
             foreach ($queue->files as $file) {
                 //  (new BotTelegram)->info('collection'.$file->type);
                 sleep($queue->message->duration ?? 5);
@@ -65,31 +91,7 @@ class SendWhatsapJob implements ShouldQueue
             }
 
 
-            sleep($queue->message->duration ?? 5);
-
-            $responsMessage = Http::timeout(10)->withHeaders([
-                'Content-Type' => 'application/json',
-            ])
-                ->asJson()
-                ->post($whatsapp->url . '/v2/send-message', [
-                    'number' => $queue->phone,
-                    'message' => $queue->message->message
-                ]);
-
-            if ($responsMessage->status() == 200) {
-                $queue->update([
-                    'status'  => 'success',
-                    'response' => $responsMessage->body()
-                ]);
-            } elseif ($responsMessage->status() == 400) {
-                $queue->update([
-                    'status' => 'failed',
-                    'response' => [
-                        'status' => 400,
-                        'message' => $queue->message->message
-                    ]
-                ]);
-            }
+            
         } catch (\Throwable $th) {
             $queue->update([
                 'status' => 'failed',
