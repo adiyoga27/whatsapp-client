@@ -55,6 +55,8 @@ Route::get('/', function()
 
 Route::get('/test', function()
 {
+    $whatsappUrl = 'https://wabot.galkasoft.id:7991';
+
     (new BotTelegram)->info($whatsappUrl . '/send-message');
 
     return (new SendMessage)->__invoke();
