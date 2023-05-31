@@ -50,7 +50,7 @@
     var isLogin = false;
     var socket;
     $(document).ready(function () {
-        socket = io('http://wabot.galkasoft.id:7991');
+        socket = io('https://wabot.galkasoft.id:7991');
    
 
         socket.emit("init", {
