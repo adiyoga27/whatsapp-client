@@ -49,7 +49,7 @@ class sendWhatsAppMessageListener
             'Content-Type' => 'application/json',
         ])
             ->asJson()
-            ->post($whatsapp->url . '/v2/send-message', [
+            ->post('https://wabot.galkasoft.id:7991/send-message', [
                 'number' => $data->customer_phone,
                 'message' => 'Semangat Pagi,
 Hai, Berikut kami kirimkan data pembelanjaan anda :

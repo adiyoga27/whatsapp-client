@@ -48,7 +48,7 @@ class WhatsappBroadcastController extends Controller
         //                     'Content-Type' => 'application/json',
         //                 ])
         //                     ->asJson()
-        //                     ->post('https://wabot.galkasoft.id:3006/v2/send-media', [
+        //                     ->post('https://wabot.galkasoft.id:7991/send-media', [
         //                         'number' => $queue->phone,
         //                         'message' => 'test',
         //                         'filetype' => $fileType,
@@ -63,7 +63,7 @@ class WhatsappBroadcastController extends Controller
         //                 'Content-Type' => 'application/json',
         //             ])
         //                 ->asJson()
-        //                 ->post('https://wabot.galkasoft.id:3006/v2/send-message', [
+        //                 ->post('https://wabot.galkasoft.id:7991/send-message', [
         //                     'number' => $queue->phone,
         //                     'message' => $message->message
         //                 ]);

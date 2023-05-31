@@ -35,8 +35,8 @@ class SendWhatsapJob implements ShouldQueue
      */
     public function handle()
     {
-        $whatsappUrl = Config('whatsapp.whatsapp_url');
-        $whatsapp = Whatsapp::first();
+        $whatsappUrl = config('whatsapp.whatsapp_url');
+        // $whatsapp = Whatsapp::first();
         QueueMessage::where('id', $this->queueID)->update([
             'status' => 'ongoing'
         ]);
