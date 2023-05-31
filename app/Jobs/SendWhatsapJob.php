@@ -65,10 +65,7 @@ class SendWhatsapJob implements ShouldQueue
             } elseif ($responsMessage->status() == 400) {
                 $queue->update([
                     'status' => 'failed',
-                    'response' => [
-                        'status' => 400,
-                        'message' => $queue->message->message
-                    ]
+                    'response' => $responsMessage->body()
                 ]);
             }
             
