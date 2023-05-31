@@ -13,7 +13,7 @@ class BroadcastController extends Controller
         $sent = QueueMessage::query()->where('message_id', $message_id)
             ->where(fn ($q) =>
             $q->where('status', 'pending')->orWhere('status', 'failed'))
-            ->update(['status' => 'progress']);
+            ->update(['status' => 'progress', 'response' => null]);
 
         if ($sent) {
             return response()
