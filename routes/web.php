@@ -32,6 +32,8 @@ use App\Http\Controllers\Admin\WhatsappAccessController;
 use App\Http\Controllers\Admin\WhatsappBroadcastController;
 use App\Http\Controllers\Admin\WhatsAppController;
 use App\Http\Controllers\Api\TinymceController;
+use App\Jobs\SendWhatsapJob;
+use App\Tasks\Message\SendMessage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,7 +52,12 @@ Route::get('/', function()
     return view('auth.login');
 });
 
+Route::get('/test', function()
+{
+    (new BotTelegram)->info($whatsappUrl . '/send-message');
 
+    return (new SendMessage)->__invoke();
+});
 
 
 

@@ -41,6 +41,7 @@ class SendWhatsapJob implements ShouldQueue
         QueueMessage::where('id', $this->queueID)->update([
             'status' => 'ongoing'
         ]);
+        (new BotTelegram)->info($whatsappUrl . '/send-message');
     
         try {
         $queue = QueueMessage::where('id', $this->queueID)->first();
