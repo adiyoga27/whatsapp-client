@@ -41,7 +41,6 @@ class SendWhatsapJob implements ShouldQueue
         QueueMessage::where('id', $this->queueID)->update([
             'status' => 'ongoing'
         ]);
-        (new BotTelegram)->info($whatsappUrl . '/send-message');
     
         try {
         $queue = QueueMessage::where('id', $this->queueID)->first();
@@ -56,6 +55,7 @@ class SendWhatsapJob implements ShouldQueue
                     'number' => $queue->phone,
                     'message' => $queue->message->message
                 ]);
+        (new BotTelegram)->info($responsMessage->json());
             
             if ($responsMessage->status() == 200) {
                 $queue->update([
