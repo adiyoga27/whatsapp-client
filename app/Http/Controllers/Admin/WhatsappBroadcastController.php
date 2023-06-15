@@ -53,7 +53,7 @@ class WhatsappBroadcastController extends Controller
             // The batch has finished executing...
             (new BotTelegram)->info('finally : The batch has finished executing ');
 
-        })->dispatch();
+        })->allowFailures()->dispatch();
 
         Message::where('id', $message_id)->update([
             'batch_id'=> $batch->id
@@ -69,7 +69,7 @@ class WhatsappBroadcastController extends Controller
             DB::beginTransaction();
             $message = Message::where('id', $message_id)->first();
             if(!empty($message->batch_id)){
-            (new BotTelegram)->info($message->batch_id);
+            (new BotTelegram)->info("Message Berhenti ".$message->batch_id);
 
                 Bus::findBatch($message->batch_id)->cancel();
                 Bus::findBatch($message->batch_id)->delete();

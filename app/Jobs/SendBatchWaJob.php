@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Http\Controllers\BotTelegram;
 use App\Models\QueueAttachment;
 use App\Models\QueueMessage;
 use App\Models\Whatsapp;
