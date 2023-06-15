@@ -36,19 +36,6 @@ class WhatsappBroadcastController extends Controller
             (new BotTelegram)->info('then : All jobs completed successfully ');
 
           
-        })->catch(function (Batch $batch, Throwable $th) {
-            // First batch job failure detected...
-            (new BotTelegram)->error($th);
-            // $message = Message::where('batch_id', $batch->id)->first();
-            // QueueMessage::where('status', 'progress')->where('message_id', $message->id)->update([
-            //     'status'=>'pending'
-            // ]);
-
-
-            
-            // (new BotTelegram)->info('catch : First batch job failure detected '.$batch->id);
-            // $batch->delete();
-
         })->finally(function (Batch $batch) {
             // The batch has finished executing...
             (new BotTelegram)->info('finally : The batch has finished executing ');
