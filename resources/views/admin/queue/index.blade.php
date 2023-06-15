@@ -142,7 +142,7 @@
                                 @include('admin.flash-message')
 
                                 <div class="table-responsive">
-                                    <table class="table align-middle mb-0" id="datatable">
+                                    <table class="table align-middle mb-0 datatable" id="datatable">
 
                                         <thead>
                                             <tr>
@@ -156,7 +156,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($queue as $val)
+                                            {{-- @foreach ($queue as $val)
                                                 <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $val->name }}</td>
@@ -183,9 +183,7 @@
                                                     </td>
                                                     <td class="">
                                                         <div class="d-flex">
-                                                            {{-- <a href="{{ route('queue.edit', [$val->id]) }}"
-                                                                class="btn btn-success waves-effect waves-light me-2"><i
-                                                                    class="bx bx-edit-alt"></i></a> --}}
+                                                
                                                             <button class="btn btn-success waves-effect waves-light me-2"
                                                                 id="btn-queue-data-view"
                                                                 data-queue-data-view-url="{{ route('queue.edit', [$val->id]) }}"
@@ -204,7 +202,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                            @endforeach --}}
 
                                         </tbody>
                                     </table>
@@ -216,11 +214,23 @@
                     <hr>
                     <div class="row mt-3">
                         <div class="col-lg text-end">
-                            <button type="button" id="btn-send-message" class="btn btn-success"><i
+                           
+                               
+                                @if ($isSending)
+                                    <button type="button" id="btn-send-message" class="btn btn-danger">
+                                    <i class='bx bx-stop-circle'></i>
+                                    <span key="t-send">Batalkan</span></button>
+                                    <button type="button" id="btn-send-message" class="btn btn-warning"><div class="spinner-border text-light  spinner-border-sm" role="status"></div>
+                                    <span key="t-send">Sedang Mengirim</span></button>
+                                @else
+                                <button type="button" id="btn-send-message" class="btn btn-success"><i
                                     class="bx bx-paper-plane"></i>
                                 <span key="t-send">Kirim</span></button>
+                                @endif
+                               
                         </div>
                     </div>
+                    
 
                 </div>
             </div>
@@ -577,7 +587,44 @@
 @endsection
 
 @section('javascript')
-    <script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+
+        // Inisialisasi DataTable
+var table = $('#datatable').DataTable({
+  // Konfigurasi DataTable
+  // ...
+});
+alert('a');
+
+// Fungsi untuk memperbarui tabel dengan data baru
+function refreshTable() {
+  $.ajax({
+    url: "{{url('admin/queue/list/')}}/{{$id}}",
+    method: 'GET',
+    success: function(data) {
+      // Menghapus data yang ada pada tabel
+      table.clear();
+      
+      // Menambahkan data baru ke dalam tabel
+      table.rows.add(data);
+      
+      // Merender ulang tabel
+      table.draw(false);
+      
+      console.log('Tabel diperbarui');
+    },
+    error: function(xhr, status, error) {
+      console.error('Terjadi kesalahan:', error);
+    }
+  });
+}
+
+// Mengatur refresh setiap 5 detik (5000 milidetik)
+setInterval(refreshTable, 5000);
+
         $(document).on('click', '#btn-send-message', function(e) {
             e.preventDefault()
 

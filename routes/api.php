@@ -130,6 +130,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     // queue message
     Route::controller(QueueController::class)->group(function () {
+
         Route::get('queue-message/{message_id}', 'index');
         Route::post('queue-messages/store-manual', 'StoreManualQueue');
         Route::put('queue-messages/update/{queue_id}', 'update');

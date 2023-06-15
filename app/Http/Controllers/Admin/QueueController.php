@@ -19,12 +19,14 @@ class QueueController extends Controller
     public function index($id)
     {
         $data = [
+            'id' => $id,
             'message' => Message::query()->find($id),
             'queue' => QueueMessage::query()->with('phonebook')->where('message_id', $id)->latest()->get(),
             'phonebook' => PhoneBook::all(),
             'images' => AttachmentMessage::query()->where('message_id', $id)->where('type', 'images')->get(),
             'videos' => AttachmentMessage::query()->where('message_id', $id)->where('type', 'videos')->get(),
             'file' => AttachmentMessage::query()->where('message_id', $id)->where('type', 'file')->get(),
+            'isSending' => QueueMessage::query()->with('phonebook')->where('message_id', $id)->where('status', 'progress')->exists() ?? false
         ];
 
 
@@ -119,5 +121,16 @@ class QueueController extends Controller
         QueueMessage::query()->where('message_id', $id)->delete();
 
         return redirect()->back()->with('success', 'Delete data successfully');
+    }
+
+    public function queueMessage(Request $request, $id)
+    {
+        $queue = QueueMessage::where('message_id', $id)->get();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'success',
+            'data' => $queue->toArray()
+        ]);
     }
 }

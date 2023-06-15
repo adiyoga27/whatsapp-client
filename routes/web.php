@@ -197,6 +197,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
 
     // queue
     Route::controller(QueueController::class)->group(function () {
+        Route::get('queue/list/{id}', 'queueMessage');
+
         Route::get('queue/{message}', 'index')->name('queue.index');
         Route::post('queue/import-phonebook', 'importPhonebook')->name('queue.importphonebook');
         Route::post('queue/import-excel', 'importexcel')->name('queue.importexcel');
