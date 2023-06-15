@@ -90,7 +90,7 @@ class SendBatchWaJob implements ShouldQueue
                                 'number' => $queue->phone,
                                 'message' => $queue->message->message
                         ]);
-                        (new BotTelegram)->info($responsMessage->json());
+                        (new BotTelegram)->info($responsMessage->status());
                         
                         if ($responsMessage->status() == 200) {
                             $queue->update([
