@@ -64,8 +64,6 @@ class SendWhatsapJob implements ShouldQueue
                         ->asJson()
                         ->post($whatsappUrl . '/send-media', [
                             'number' => $queue->phone,
-                            'message' => ' ',
-                            'filetype' => $fileType,
                             'url' => url('storage') . '/' . ($file->url),
                         ]);
 
