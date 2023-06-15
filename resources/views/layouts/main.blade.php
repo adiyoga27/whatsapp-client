@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
+    <meta  name="csrf-token" content="{{csrf_token()}}" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/logo-galkasoft.png') }}">
 
@@ -90,6 +91,15 @@
     @yield('javascript')
     <script>
         $(document).ready(function() {
+
+        // Get the CSRF token value from the meta tag
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        // Set the CSRF token in the default headers for all AJAX requests
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': csrfToken
+            }
+        });
 
             $("#myModal").modal('show');
 

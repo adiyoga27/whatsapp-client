@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Events\ImportCondition;
 use App\Exports\QueuDataExport;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\QueueMessageResource;
+use App\Http\Resources\QueueResource;
 use App\Imports\QueueImport;
 use App\Models\AttachmentMessage;
 use App\Models\ContactPhoneBook;
@@ -130,7 +132,16 @@ class QueueController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'success',
-            'data' => $queue->toArray()
+            'data' => array(
+                    'queue'=> QueueMessageResource::collection($queue),
+                    'status'=> array(
+                        'all' => QueueMessage::where('message_id', $id)->count(),
+                        'pending' => QueueMessage::where('message_id', $id)->where('status', 'pending')->count(),
+                        'success' => QueueMessage::where('message_id', $id)->where('status', 'success')->count(),
+                        'failed' => QueueMessage::where('message_id', $id)->where('status', 'failed')->count(),
+                        'progress' => QueueMessage::where('message_id', $id)->where('status', 'progress')->count(),
+                    )
+                )
         ]);
     }
 }

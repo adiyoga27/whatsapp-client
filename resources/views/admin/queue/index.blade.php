@@ -24,13 +24,16 @@
                     <div class="row">
                         <div class="col-lg">
                             <div class="message-box mb-3">
-                                <h3 key="t-message">Message</h3>
+                                <h5 key="t-message">Message</h5>
+                                <hr>
                                 <textarea name="message" class="form-control" id="message" rows="14" readonly>{{ $message->message }}</textarea>
                             </div>
                             <div class="message-box mb-3">
                                 <h5 key="t-file-attach">File Attachment</h5>
+                                <hr>
+
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="card border shadow-none mb-2">
@@ -114,8 +117,145 @@
 
                                 </div>
                             </div>
+                            <div class="message-box mb-3">
+                                <h5 key="t-message">Status</h5>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                                <div class="card border shadow-none mb-2">
+                                                <div class="text-body">
+                                                        <div class="p-2">
+                                                            <div class="d-flex">
+                                                                <div class="avatar-xs align-self-center me-2">
+                                                                    <div
+                                                                        class="avatar-title rounded bg-transparent text-primary font-size-20">
+                                                                        <i class="mdi mdi-account-multiple"></i>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="overflow-hidden me-auto">
+                                                                    <h5 class="font-size-13 text-truncate mb-1">Total</h5>
+                                                                    <p class="text-muted text-truncate mb-0  st-all">
+                                                                        0 Orang</p>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card border shadow-none mb-2">
+                                                <div class="text-body">
+                                                        <div class="p-2">
+                                                            <div class="d-flex">
+                                                                <div class="avatar-xs align-self-center me-2">
+                                                                    <div
+                                                                        class="avatar-title rounded bg-transparent text-secondary font-size-20">
+                                                                        <i class="mdi mdi-book-open"></i>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="overflow-hidden me-auto">
+                                                                    <h5 class="font-size-13 text-truncate mb-1">Belum Dikirim</h5>
+                                                                    <p class="text-muted text-truncate mb-0  st-pending">
+                                                                        0 Orang</p>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card border shadow-none mb-2">
+                                                    <div class="text-body">
+                                                        <div class="p-2">
+                                                            <div class="d-flex">
+                                                                <div class="avatar-xs align-self-center me-2">
+                                                                    <div
+                                                                        class="avatar-title rounded bg-transparent text-warning font-size-20">
+                                                                        <i class="mdi mdi-cached"></i>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="overflow-hidden me-auto">
+                                                                    <h5 class="font-size-13 text-truncate mb-1">Sedang Dikirim</h5>
+                                                                    <p class="text-muted text-truncate mb-0  st-progress">
+                                                                        0 Orang</p>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card border shadow-none mb-2">
+                                                <div class="text-body">
+                                                        <div class="p-2">
+                                                            <div class="d-flex">
+                                                                <div class="avatar-xs align-self-center me-2">
+                                                                    <div
+                                                                        class="avatar-title rounded bg-transparent text-danger font-size-20">
+                                                                        <i class="mdi mdi-close-circle"></i>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="overflow-hidden me-auto">
+                                                                    <h5 class="font-size-13 text-truncate mb-1">Gagal</h5>
+                                                                    <p class="text-muted text-truncate mb-0  st-failed">
+                                                                        0 Orang</p>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card border shadow-none mb-2">
+                                                <div class="text-body">
+                                                        <div class="p-2">
+                                                            <div class="d-flex">
+                                                                <div class="avatar-xs align-self-center me-2">
+                                                                    <div
+                                                                        class="avatar-title rounded bg-transparent text-success font-size-20">
+                                                                        <i class="mdi mdi-checkbox-marked-circle"></i>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="overflow-hidden me-auto">
+                                                                    <h5 class="font-size-13 text-truncate mb-1">Terkirim</h5>
+                                                                    <p class="text-muted text-truncate mb-0 st-success">
+                                                                        0 Orang</p>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+                    <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg">
                     <div class="button-create mb-3 text-start d-flex">
                         <a href="" class="mx-1 btn btn-primary" id="btn-manual-add-view" data-bs-toggle="modal"
                             data-bs-target="#manual-add-modal"><i class="bx bx-plus"></i>
@@ -217,10 +357,10 @@
                            
                                
                                 @if ($isSending)
-                                    <button type="button" id="btn-send-message" class="btn btn-danger">
+                                    <button type="button" id="btn-stop" class="btn btn-danger">
                                     <i class='bx bx-stop-circle'></i>
                                     <span key="t-send">Batalkan</span></button>
-                                    <button type="button" id="btn-send-message" class="btn btn-warning"><div class="spinner-border text-light  spinner-border-sm" role="status"></div>
+                                    <button type="button" class="btn btn-warning"><div class="spinner-border text-light  spinner-border-sm" role="status" disabled></div>
                                     <span key="t-send">Sedang Mengirim</span></button>
                                 @else
                                 <button type="button" id="btn-send-message" class="btn btn-success"><i
@@ -591,39 +731,99 @@
 
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script>
+$(document).ready(function() {
+    var table = $('#datatable').DataTable({
+        // ajax: "{{url('admin/queue/list/')}}/{{$id}}",
+        ajax: {
+            url: "{{url('admin/queue/list/')}}/{{$id}}",
+            type: "GET",
+            dataType: "json",
+            dataSrc: function(response) {
+                document.querySelector('.st-all').textContent = response.data.status.all+" Orang";
+                document.querySelector('.st-success').textContent = response.data.status.success+" Orang";
+                document.querySelector('.st-pending').textContent = response.data.status.pending+" Orang";
+                document.querySelector('.st-progress').textContent = response.data.status.progress+" Orang";
+                document.querySelector('.st-failed').textContent = response.data.status.failed+" Orang";
+                return response.data.queue; // Set the data source to "queue" array in the response
+            }
+        },
+        dataSrc: 'data.queue',
+        columns: [
+            
+            {
+            data: null,
+                render: function(data, type, row, meta) {
+                // Calculate the row index
+                var rowIndex = meta.row + meta.settings._iDisplayStart + 1;
+                return rowIndex;
+                }
+            },
+          
+            {
+                data: 'name',
+            },
+            {
+                data: 'phone',
+            },
+            {
+                data: 'status',
+                render: function(data, type, full, meta) {
+                    if(data == 'success'){
+                        return '<button class="btn btn-success" type="button" disabled> Terkirim </button>';
 
-        // Inisialisasi DataTable
-var table = $('#datatable').DataTable({
-  // Konfigurasi DataTable
-  // ...
-});
-alert('a');
+                    }else if (data == 'pending'){
+                        return '<button class="btn btn-secondary" type="button" disabled> Belum Terkirim </button>';
 
-// Fungsi untuk memperbarui tabel dengan data baru
-function refreshTable() {
-  $.ajax({
-    url: "{{url('admin/queue/list/')}}/{{$id}}",
-    method: 'GET',
-    success: function(data) {
-      // Menghapus data yang ada pada tabel
-      table.clear();
-      
-      // Menambahkan data baru ke dalam tabel
-      table.rows.add(data);
-      
-      // Merender ulang tabel
-      table.draw(false);
-      
-      console.log('Tabel diperbarui');
-    },
-    error: function(xhr, status, error) {
-      console.error('Terjadi kesalahan:', error);
+                    }else if (data == 'progress'){
+                        return '<button class="btn btn-warning" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengirim </button>';
+
+                    }else if (data == 'failed'){
+                        return '<button class="btn btn-danger" type="button" disabled> Gagal </button>';
+
+
+                    }
+                  
+                }
+            },
+            
+            {
+                data: 'response',
+                render: function(data, type, full, meta) {
+                    return data;
+                }
+            },
+            {
+                data: 'id',
+                name: 'id',
+                render: function(data, type, full, meta) {
+                    return `<div class="d-flex"><button class="btn btn-success waves-effect waves-light me-2"
+                                                    id="btn-queue-data-view"
+                                                    data-queue-data-view-url="{{ url('admin/queue/edit') }}/`+data+`"
+                                                    data-queue-update-url="{{ url('admin/queue/update') }}/`+data+`"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#queue-data-modal"><i
+                                                        class="bx bx-edit-alt"></i></button>
+                                                <form action="" id="form-delete" method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger waves-effect waves-light"
+                                                        data-softdeletedurl="{{ url('admin/queue/destroy') }}/`+data+`"
+                                                        id="delete-btn"><i
+                                                            class="bx bx-trash-alt"></i></button>
+                                                </form>
+                                            </div>`
+                }
+            },
+        ]
+    });
+
+    function refreshTable() {
+        table.ajax.reload(null, false); // false menghindari perubahan halaman
     }
-  });
-}
 
-// Mengatur refresh setiap 5 detik (5000 milidetik)
-setInterval(refreshTable, 5000);
+    setInterval(refreshTable, 5000);
+});
+    
 
         $(document).on('click', '#btn-send-message', function(e) {
             e.preventDefault()
@@ -644,6 +844,38 @@ setInterval(refreshTable, 5000);
                         'success'
                     )
                     window.location.href = "{{ route('send-message', [$message->id]) }}";
+                }
+            })
+        })
+
+        $(document).on('click', '#btn-stop', function(e) {
+            e.preventDefault()
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Anda akan menghentikan pesan ini !!!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ route('stop-message', $id) }}",
+                        type: 'POST',
+                        data: {
+                            // Include your POST data here
+                        },
+                        success: function(response) {
+                            // Reload the DataTable after the POST request is completed
+                            window.location.reload();
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error if needed
+                        }
+                    });
+                   
                 }
             })
         })

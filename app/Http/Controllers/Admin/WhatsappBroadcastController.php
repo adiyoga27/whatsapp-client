@@ -28,4 +28,20 @@ class WhatsappBroadcastController extends Controller
 
         return redirect()->back()->with('success', 'Sending message on progress');
     }
+
+    public function stopMessage($message_id)
+    {
+        QueueMessage::query()->where('message_id', $message_id)
+            ->where(fn ($q) =>
+            $q->where('status', 'progress'))
+            ->update(['status' => 'pending', 'response' => null]);
+
+
+
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Success Stop Message'
+        ]);
+    }
 }

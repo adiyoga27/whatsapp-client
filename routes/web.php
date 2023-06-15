@@ -219,6 +219,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     // whatsapp broadcast
     Route::controller(WhatsappBroadcastController::class)->group(function () {
         Route::get('whatsapp/send-message/{message}', 'sendMessage')->name('send-message');
+        Route::post('whatsapp/stop-message/{message}', 'stopMessage')->name('stop-message');
     });
 
     // variant
