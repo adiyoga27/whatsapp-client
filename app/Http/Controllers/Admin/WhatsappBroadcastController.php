@@ -45,7 +45,7 @@ class WhatsappBroadcastController extends Controller
             // The batch has finished executing...
             (new BotTelegram)->info('finally : The batch has finished executing '.$batch->id);
 
-        })->dispatch();
+        })->allowFailures()->dispatch();
 
         Message::where('id', $message_id)->update([
             'batch_id'=> $batch->id
