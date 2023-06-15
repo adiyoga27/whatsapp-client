@@ -139,7 +139,7 @@ class QueueController extends Controller
                         'pending' => QueueMessage::where('message_id', $id)->where('status', 'pending')->count(),
                         'success' => QueueMessage::where('message_id', $id)->where('status', 'success')->count(),
                         'failed' => QueueMessage::where('message_id', $id)->where('status', 'failed')->count(),
-                        'progress' => QueueMessage::where('message_id', $id)->where('status', 'progress')->count(),
+                        'progress' => QueueMessage::where('message_id', $id)->where(fn($q) => $q->where('status', 'ongoing')->orWhere('status', 'progress'))->count(),
                     )
                 )
         ]);

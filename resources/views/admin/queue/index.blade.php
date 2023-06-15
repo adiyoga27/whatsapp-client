@@ -774,7 +774,7 @@ $(document).ready(function() {
                     }else if (data == 'pending'){
                         return '<button class="btn btn-secondary" type="button" disabled> Belum Terkirim </button>';
 
-                    }else if (data == 'progress'){
+                    }else if (data == 'progress' || data == 'ongoing'){
                         return '<button class="btn btn-warning" type="button" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengirim </button>';
 
                     }else if (data == 'failed'){
