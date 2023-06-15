@@ -39,7 +39,7 @@ class WhatsappBroadcastController extends Controller
         })->catch(function (Batch $batch, Throwable $th) {
             // First batch job failure detected...
             (new BotTelegram)->error($th);
-            $message = Message::where('batch_id', $batch->id);
+            $message = Message::where('batch_id', $batch->id)->first();
             QueueMessage::where('status', 'progress')->where('message_id', $message->id)->update([
                 'status'=>'pending'
             ]);
@@ -53,7 +53,7 @@ class WhatsappBroadcastController extends Controller
             // The batch has finished executing...
             (new BotTelegram)->info('finally : The batch has finished executing '.$batch->id);
 
-        })->allowFailures()->dispatch();
+        })->dispatch();
 
         Message::where('id', $message_id)->update([
             'batch_id'=> $batch->id
