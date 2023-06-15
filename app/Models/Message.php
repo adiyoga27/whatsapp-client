@@ -14,6 +14,7 @@ class Message extends Model
         'title',
         'message',
         'duration',
+        'batch_id'
     ];
 
     public function whatsapp()

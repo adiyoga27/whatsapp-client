@@ -356,17 +356,17 @@
                         <div class="col-lg text-end">
                            
                                
-                                @if ($isSending)
+                             
                                     <button type="button" id="btn-stop" class="btn btn-danger">
                                     <i class='bx bx-stop-circle'></i>
                                     <span key="t-send">Batalkan</span></button>
                                     <button type="button" class="btn btn-warning"><div class="spinner-border text-light  spinner-border-sm" role="status" disabled></div>
                                     <span key="t-send">Sedang Mengirim</span></button>
-                                @else
+                       
                                 <button type="button" id="btn-send-message" class="btn btn-success"><i
                                     class="bx bx-paper-plane"></i>
                                 <span key="t-send">Kirim</span></button>
-                                @endif
+                         
                                
                         </div>
                     </div>
