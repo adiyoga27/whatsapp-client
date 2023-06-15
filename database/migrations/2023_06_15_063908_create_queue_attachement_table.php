@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('queue_attachements', function (Blueprint $table) {
+        Schema::create('queue_attachments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('queue_id');
             $table->foreignId('attachment_id');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('queue_attachements');
+        Schema::dropIfExists('queue_attachments');
     }
 };
