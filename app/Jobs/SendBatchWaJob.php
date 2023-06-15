@@ -60,14 +60,7 @@ class SendBatchWaJob implements ShouldQueue
                         sleep($queue->message->duration ?? 5);
                             $cekAttachmentQueue = QueueAttachment::where('queue_id', $queue->id)->where('attachment_id', $file->id)->exists();
                             if(!$cekAttachmentQueue){
-                                if ($file->type == 'images') {
-                                    $fileType = 'image';
-                                } elseif ($file->type == 'videos') {
-                                    $fileType = 'video';
-                                } elseif ($file->type == 'file') {
-                                    $fileType = 'file';
-                                }
-                                $response =  Http::timeout(10)->withHeaders([
+                                $resAttachment =  Http::timeout(10)->withHeaders([
                                     'Content-Type' => 'application/json',
                                     'authorization' => $queue->message->whatsapp->apikey
                                 ])
@@ -77,7 +70,7 @@ class SendBatchWaJob implements ShouldQueue
                                         'url' => url('storage') . '/' . ($file->url),
                                     ]);
 
-                                    if($response->status() ==  200){
+                                    if($resAttachment->status() ==  200){
                                         QueueAttachment::updateOrCreate([
                                             ['queue_id' => $queue->id, 'attachment_id' => $file->id], 
                                             ['queue_id' => $queue->id, 'attachment_id' => $file->id], 
