@@ -14,7 +14,6 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
-use PSpell\Config;
 
 class SendBatchWaJob implements ShouldQueue
 {
@@ -90,7 +89,6 @@ class SendBatchWaJob implements ShouldQueue
                                 'number' => $queue->phone,
                                 'message' => $queue->message->message
                         ]);
-                        (new BotTelegram)->info($responsMessage->status());
                         
                         if ($responsMessage->status() == 200) {
                             $queue->update([
