@@ -46,7 +46,6 @@ class SendWhatsapJob implements ShouldQueue
         try {
         $queue = QueueMessage::where('id', $this->queueID)->first();
         foreach ($queue->files as $file) {
-            //  (new BotTelegram)->info('collection'.$file->type);
             sleep($queue->message->duration ?? 5);
                 $cekAttachmentQueue = QueueAttachment::where('queue_id', $queue->id)->where('attachment_id', $file->id)->exists();
                 if(!$cekAttachmentQueue){
@@ -87,7 +86,7 @@ class SendWhatsapJob implements ShouldQueue
                     'number' => $queue->phone,
                     'message' => $queue->message->message
             ]);
-            (new BotTelegram)->info($responsMessage->json());
+
             
             if ($responsMessage->status() == 200) {
                 $queue->update([

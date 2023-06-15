@@ -55,7 +55,6 @@ class SendBatchWaJob implements ShouldQueue
             $queueMessages = QueueMessage::where('message_id', $this->messageID)->where('status', 'progress')->get();
             foreach ($queueMessages as $queue) {
                     foreach ($queue->files as $file) {
-                        //  (new BotTelegram)->info('collection'.$file->type);
                         sleep($queue->message->duration ?? 5);
                             $cekAttachmentQueue = QueueAttachment::where('queue_id', $queue->id)->where('attachment_id', $file->id)->exists();
                             if(!$cekAttachmentQueue){
