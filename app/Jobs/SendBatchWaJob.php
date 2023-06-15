@@ -68,7 +68,7 @@ class SendBatchWaJob implements ShouldQueue
                                     ->post($whatsappUrl . '/send-media', [
                                         'number' => $queue->phone,
                                         'url' => url('storage') . '/' . ($file->url),
-                                    ]);
+                                    ])->throw();
 
                                     if($resAttachment->status() ==  200){
                                         QueueAttachment::updateOrCreate([
