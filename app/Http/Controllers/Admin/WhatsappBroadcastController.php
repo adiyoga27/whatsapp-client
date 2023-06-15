@@ -33,7 +33,7 @@ class WhatsappBroadcastController extends Controller
             new SendBatchWaJob($message_id)
         ])->then(function (Batch $batch) {
             // All jobs completed successfully...
-            (new BotTelegram)->info('then : All jobs completed successfully '.$batch->id);
+            (new BotTelegram)->info('then : All jobs completed successfully ');
 
           
         })->catch(function (Batch $batch, Throwable $th) {
@@ -51,7 +51,7 @@ class WhatsappBroadcastController extends Controller
 
         })->finally(function (Batch $batch) {
             // The batch has finished executing...
-            (new BotTelegram)->info('finally : The batch has finished executing '.$batch->id);
+            (new BotTelegram)->info('finally : The batch has finished executing ');
 
         })->dispatch();
 
